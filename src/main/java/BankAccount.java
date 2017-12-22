@@ -11,6 +11,8 @@ public class BankAccount {
 	  public double debit(double amount) {
 	    if (balance < amount) {
 	      amount = balance;
+		    /* Test check-in*/
+		    balance = balance + balance;
 	    }
 
 	    balance -= amount;
