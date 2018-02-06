@@ -4,7 +4,7 @@ public class BankAccount {
 
 	  private double balance;
 	private double b1;
-	private souble b2;
+	private double b2;
 
 	  public BankAccount(double balance) {
 	    this.balance = balance;
