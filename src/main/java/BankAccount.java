@@ -3,6 +3,10 @@ package com.bogotobogo;
 public class BankAccount {
 
 	  private double balance;
+	public static void main(String[] args)
+    	{
+        	System.out.println("Hello world");
+    	}
 	
 	  public BankAccount(double balance) {
 	    this.balance = balance;
