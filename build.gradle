@@ -1,6 +1,5 @@
 apply plugin: 'java'
 
-
 sourceSets {
    main {
       java {
@@ -15,9 +14,12 @@ sourceSets {
    }
 }
 
-
 jar {
     manifest {
       attributes 'Main-Class': 'com.bogotobogo.Program'
     }
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
 }
