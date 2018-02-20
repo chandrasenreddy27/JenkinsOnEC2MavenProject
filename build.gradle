@@ -3,20 +3,6 @@ apply plugin: 'java'
 repositories {
     mavenCentral()
 }
-sourceSets {
-   main {
-      java {
-         srcDir 'src'
-      }
-   }
-   /*
-   test {
-      java {
-         srcDir 'test'
-      }
-   }
-   */
-}
 
 jar {
     manifest {
@@ -24,8 +10,24 @@ jar {
     }
 }
 
-/*
+ /*
+sourceSets {
+   main {
+      java {
+         srcDir 'src'
+      }
+   }
+  
+   test {
+      java {
+         srcDir 'test'
+      }
+   }
+   
+}
 dependencies {
     testCompile "junit:junit:4.12"
 }
 */
+
+
