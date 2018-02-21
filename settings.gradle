@@ -1,4 +1,4 @@
 
 
 rootProject.name = 'sonarqube-scanner-gradle'
-sonar.projectVersion - '4.0.0'
+
