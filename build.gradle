@@ -2,13 +2,15 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
+plugins {
+  id "org.sonarqube" version "6.4.0.25310"
+}
+
 repositories {
     jcenter()
     mavenCentral()
 }
-plugins {
-  id "org.sonarqube" version "6.4.0.25310"
-}
+
 
 jar {
     manifest {
