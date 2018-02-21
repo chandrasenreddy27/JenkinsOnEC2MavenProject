@@ -25,6 +25,15 @@
   </dependencies>
   
 <build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>6.4.0.25310</version>
+      </plugin>
+    </plugins>
+  </pluginManagement>
   <plugins>
     <plugin>
       <!-- Build an executable JAR -->
