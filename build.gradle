@@ -6,6 +6,9 @@ repositories {
     jcenter()
     mavenCentral()
 }
+plugins {
+  id "org.sonarqube" version "6.4.0.25310"
+}
 
 jar {
     manifest {
@@ -36,7 +39,4 @@ dependencies {
    testCompile 'junit:junit:4.12'
 }
 
-plugins {
-  id "org.sonarqube" version "6.4.0.25310"
-}
 
