@@ -23,11 +23,13 @@ repositories {
     mavenCentral()
 }
 
+/*
 sonarRunner {
     sonarProperties {
         sonar.projectVersion - '4.0.0'
     }
 }
+*/
 
 jar {
     manifest {
