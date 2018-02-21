@@ -32,7 +32,7 @@ sourceSets {
 }
  
 dependencies {
-   /* compile 'org.slf4j:slf4j-api:1.7.12' */
+   compile 'com.bogotobogo:JankinsOnEC2Maven:4.0.0' 
    testCompile 'junit:junit:4.12'
 }
 
