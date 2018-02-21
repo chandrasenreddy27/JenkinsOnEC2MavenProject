@@ -52,5 +52,13 @@ sourceSets {
         testCompile 'junit:junit:4.12'
  }
 
-
+uploadArchives {
+    repositories{
+        mavenDeployer {
+            repository(url: "http://localhost:8081/nexus/content/repositories/releases") {
+                 authentication(userName: "admin", password: "admin123")
+            }
+        }
+    }
+}
 
