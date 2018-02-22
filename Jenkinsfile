@@ -34,4 +34,7 @@ node {
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonar-pipeline -Dsonar.sources=. "
         }
     }
+   stage('Publish') {
+        nexusPublisher nexusInstanceId: 'NexusLocal', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/jobs/NewPipeLine/builds/lastSuccessfulBuild/archive/target/JankinsOnEC2Maven-4.0.0.jar']], mavenCoordinate: [artifactId: 'JankinsOnEC2Maven', groupId: 'com.chandrasen', packaging: 'jar', version: '4.0.0']]]
+} 
 }
