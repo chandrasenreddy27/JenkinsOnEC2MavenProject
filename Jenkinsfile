@@ -18,7 +18,12 @@ node {
    }
    stage('Tests') {
       steps {
-          sh 'mvn test'
+          if (isUnix()) {
+            sh "'${mvnHome}/bin/mvn' test"
+          } 
+          else {
+            bat(/"${mvnHome}\bin\mvn" test/)
+          }
        }
       post {
             always {
