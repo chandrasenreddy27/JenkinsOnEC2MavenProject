@@ -17,19 +17,13 @@ node {
       }
    }
    stage('Tests') {
-      steps {
-          if (isUnix()) {
+      if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' test"
           } 
           else {
             bat(/"${mvnHome}\bin\mvn" test/)
           }
-       }
-      post {
-            always {
-               junit '**/target/surefire-reports/TEST-*.xml'
-            }
-        }
+      junit '**/target/surefire-reports/TEST-*.xml'
    }
    stage('Archive'){
       archive 'target/*.jar'
