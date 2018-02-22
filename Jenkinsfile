@@ -11,13 +11,22 @@ node {
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+         sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
       } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
+         bat(/"${mvnHome}\bin\mvn" -B -DskipTests clean package/)
       }
    }
-   stage('Results') {
-      junit '**/target/surefire-reports/TEST-*.xml'
+   stage('Tests') {
+      steps {
+          sh 'mvn test'
+       }
+      post {
+            always {
+               junit '**/target/surefire-reports/TEST-*.xml'
+            }
+        }
+   }
+   stage('Archive'){
       archive 'target/*.jar'
    }
 }
