@@ -31,7 +31,7 @@ node {
    stage('SonarQube analysis') { 
       def scannerHome = tool 'MySonarQube_Scanner';
         withSonarQubeEnv('MySonarQube') { 
-          sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonar-pipeline "
+          sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=sonar-pipeline -Dsonar.sources=. "
         }
     }
 }
