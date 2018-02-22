@@ -30,7 +30,7 @@ node {
    }
    stage('SonarQube analysis') { 
       def scannerHome = tool 'MySonarQube_Scanner';
-        withSonarQubeEnv('http://localhost:9000') { 
+        withSonarQubeEnv('MySonarQube') { 
           sh "${scannerHome}/bin/sonar-scanner"
         }
     }
