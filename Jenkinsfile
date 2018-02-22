@@ -28,4 +28,10 @@ node {
    stage('Archive'){
       archive 'target/*.jar'
    }
+   stage('SonarQube analysis') { 
+      def scannerHome = tool 'MySonarQube_Scanner';
+        withSonarQubeEnv('http://localhost:9000') { 
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
+    }
 }
